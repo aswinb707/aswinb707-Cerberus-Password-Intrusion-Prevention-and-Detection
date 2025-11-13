@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard</title>
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top left, #1e005f, #30009c, #5900ff);
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Dashboard container */
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 800px;
+}
+
+/* Card style */
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border-radius: 20px;
+  padding: 40px;
+  margin: 15px 0;
+  width: 100%;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 45px rgba(0,0,0,0.45);
+}
+
+/* Headings */
+.card h1 {
+  font-size: 32px;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.card p {
+  font-size: 18px;
+  margin: 8px 0;
+}
+
+/* Buttons */
+button {
+  margin-top: 20px;
+  padding: 12px 28px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #6f00ff, #a855f7);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #7e22ce, #9333ea);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(147,51,234,0.6);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.card {
+  animation: fadeIn 0.8s ease-in-out;
+  font-weight: 900;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: large;
+}
+</style>
+</head>
+<body>
+<div class="dashboard">
+  <div class="card">
+    <h1>Login Successful</h1>
+    <p>Welcome back!</p>
+    <p><strong>{{ abnormal }}</strong> abnormal attempt(s) detected.</p>
+    <p><strong>{{ attempts }}</strong> total tries made.</p>
+    <form action="/">
+      <button type="submit">Logout</button>
+    </form>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>DashBoard</title>
+<style>
+body {
+  background: radial-gradient(circle at top left, #1e005f, #30009c, #5900ff);
+  color: #fff;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Subtle glowing pulse animation for realism */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 25px rgba(255,255,255,0.3); }
+  50% { box-shadow: 0 0 50px rgba(255,255,255,0.6); }
+}
+
+/* Circular loader with glowing ring */
+.loader {
+  border: 6px solid rgba(255, 255, 255, 0.15);
+  border-top: 6px solid #ffffff;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 1.2s linear infinite, pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Text styling */
+h2 {
+  margin-top: 30px;
+  font-weight: 300;
+  font-size: 20px;
+  letter-spacing: 1px;
+  opacity: 0.9;
+  text-align: center;
+  animation: fadeIn 2s ease-in-out infinite alternate;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0.5; }
+  to { opacity: 1; }
+}
+
+/* Soft moving gradient overlay for futuristic effect */
+.overlay {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.05) 0%, transparent 50%, rgba(255,255,255,0.05) 100%);
+  animation: moveOverlay 8s linear infinite;
+}
+
+@keyframes moveOverlay {
+  0% { transform: translateX(-25%) rotate(0deg); }
+  100% { transform: translateX(25%) rotate(360deg); }
+}
+</style>
+</head>
+<body>
+<div class="overlay"></div>
+<div class="loader"></div>
+</body>
+</html>
